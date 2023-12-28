@@ -1,0 +1,14 @@
+services:
+ app:
+  image: hello-front-dev
+  build:
+   context: .
+   dockerfile: dev.Dockerfile
+  ports:
+   - 3000:3000
+  container_name: hello-front-dev
+  volumes:
+   - ./:/usr/src/app
+  environment:
+   - NODE_ENV=development
+
