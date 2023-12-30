@@ -14,7 +14,9 @@ if (!REDIS_URL) {
   setAsync = redisIsDisabled
 } else {
   const client = redis.createClient({
-    url: REDIS_URL
+    // url: REDIS_URL
+    host: 'redis-server',
+    port: 6379
   })
     
   getAsync = promisify(client.get).bind(client)

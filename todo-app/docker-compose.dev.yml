@@ -1,4 +1,4 @@
-	services:
+services:
  app:
   image: hello-front-dev
   build:
@@ -42,7 +42,7 @@
    - ./todo-backend/redis_data:/data
    
  server:
-  image: hello-back-dev
+  # image: hello-back-dev
   build:
    context: ./todo-backend
    dockerfile: ./dev.Dockerfile
@@ -53,7 +53,8 @@
   container_name: hello-back-dev
   environment:
    - REDIS_URL=redis://redis:6379
-   - MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database npm run dev
+   - MONGO_URL=mongodb://the_username:the_password@localhost:3456/the_database
+  command: npm run dev
 
 volumes:
  mongo_data:
