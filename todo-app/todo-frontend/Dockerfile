@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm ci
 
-ENV REACT_APP_BACKEND_URL=http://localhost:3000/todos/
+ENV REACT_APP_BACKEND_URL=http://localhost:8080/api/todos
 
 RUN CI=true npm test
 

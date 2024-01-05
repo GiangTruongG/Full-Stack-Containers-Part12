@@ -1,6 +1,7 @@
 const redis = require('redis')
 const { promisify } = require('util')
 const { REDIS_URL } = require('../util/config')
+const { log } = require('console')
 
 let getAsync
 let setAsync
@@ -14,8 +15,7 @@ if (!REDIS_URL) {
   setAsync = redisIsDisabled
 } else {
   const client = redis.createClient({
-    // url: REDIS_URL
-    host: 'redis-server',
+    host: 'redis',
     port: 6379
   })
     

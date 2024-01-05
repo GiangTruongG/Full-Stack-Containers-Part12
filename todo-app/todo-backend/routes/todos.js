@@ -4,7 +4,10 @@ const redis = require('redis');
 const { promisify } = require('util');
 const router = express.Router();
 
-const client = redis.createClient();
+const client = redis.createClient({
+  host: 'redis',
+  port: 6379
+});
 
 const getAsync = promisify(client.get).bind(client);
 const setAsync = promisify(client.set).bind(client);

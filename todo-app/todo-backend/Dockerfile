@@ -6,5 +6,7 @@ COPY . .
 
 RUN npm ci
 
+RUN npm run build
+
 ENV DEBUG=todo-backend:*
 CMD npm start

@@ -6,7 +6,7 @@ import Form from './Form'
 
 const TodoView = () => {
   const [todos, setTodos] = useState([])
-  const backend_url = process.env.REACT_APP_BACKEND_URL
+  const backend_url = process.env.REACT_APP_BACKEND_URL;
 
   const refreshTodos = async () => {
     const { data } = await axios.get(backend_url)
